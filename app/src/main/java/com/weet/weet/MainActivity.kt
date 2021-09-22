@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import com.weet.weet.view.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         imageView.startAnimation(animation)
         Handler().postDelayed({
-            val intent = Intent(this@MainActivity,LoginActivity::class.java)
+            val intent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
 
