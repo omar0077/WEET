@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.home.ConnectionDetailActivity"
+    android:background="#D3E6ED"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/contact_profile_image"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:id="@+id/contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_profile_image"
+        android:text="Umer Saleem"
+        android:textSize="30dp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:id="@+id/contact_job_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact  Job title"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:id="@+id/contact_company_name"
+        android:layout_marginLeft="15dp"
+        android:text="Contact Company Name"
+        app:layout_constraintTop_toBottomOf="@+id/contact_name"
+        app:layout_constraintLeft_toRightOf="@+id/contact_job_title"
+
+        />
+    <TextView
+        android:id="@+id/contact_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="15dp"
+        android:text="Job Summary Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum"
+        app:layout_constraintTop_toBottomOf="@+id/contact_job_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="10dp">
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="5dp"/>
+        <Button
+            android:id="@+id/btnOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="100dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBlack"
+            android:textColor="@color/white"
+            android:text="Pass"
+            />
+        <View
+            android:layout_width="12dp"
+            android:layout_height="5dp"/>
+        <Button
+            android:id="@+id/btnTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="100dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/colorBlack"
+            android:text="Save"
+            />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="5dp"/>
+
+        <Button
+            android:id="@+id/btnThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="100dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F0BE41"
+            android:textColor="@color/colorBlack"
+            android:text="Connect"/>
+        <View
+            android:layout_width="12dp"
+            android:layout_height="5dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
