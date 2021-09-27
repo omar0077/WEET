@@ -49,7 +49,6 @@
         android:textSize="18sp"
         app:cornerRadius="8dp"
         android:backgroundTint="@color/linkedInBtn"
-        android:drawableLeft="@drawable/linkedin_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

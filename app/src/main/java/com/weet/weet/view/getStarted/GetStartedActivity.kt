@@ -37,4 +37,25 @@ class GetStartedActivity : AppCompatActivity() {
 
         videoView .setOnPreparedListener { mediaPlayer -> mediaPlayer.isLooping = true }
     }
+
+    private fun releasePlayer() {
+        videoView.stopPlayback()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        configureUI()
+        getStarted = findViewById<Button>(R.id.button)
+        getStarted.setOnClickListener{
+            ActivityRepo.startLogin(this)
+        }
+    }
+    override fun onStop() {
+        super.onStop()
+        releasePlayer()
+        getStarted = findViewById<Button>(R.id.button)
+        getStarted.setOnClickListener{
+            ActivityRepo.startLogin(this)
+        }
+    }
 }
