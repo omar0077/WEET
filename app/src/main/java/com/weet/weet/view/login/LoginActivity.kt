@@ -13,6 +13,7 @@ import android.view.WindowManager
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.core.view.size
 import com.weet.weet.utils.LinkedInConstants
 import com.weet.weet.R
 import com.weet.weet.model.LinkedInEmailModel
@@ -30,6 +31,10 @@ import java.io.OutputStreamWriter
 import java.net.URL
 import java.util.concurrent.TimeUnit
 import javax.net.ssl.HttpsURLConnection
+import android.widget.RelativeLayout
+
+
+
 
 class LoginActivity : AppCompatActivity() {
     lateinit var linkedinAuthURLFull: String
@@ -71,8 +76,19 @@ class LoginActivity : AppCompatActivity() {
         webView.webViewClient = LinkedInWebViewClient()
         webView.settings.javaScriptEnabled = true
         webView.loadUrl(url)
-        linkedIndialog.setContentView(webView)
-        linkedIndialog.show()
+//        linkedIndialog.setContentView(webView)
+//        linkedIndialog.show()
+
+        val paramsWebView = RelativeLayout.LayoutParams(
+            RelativeLayout.LayoutParams.MATCH_PARENT,
+            RelativeLayout.LayoutParams.MATCH_PARENT
+        )
+        val dialog = Dialog(
+            this /*put your activity object*/,
+            android.R.style.Theme_Black_NoTitleBar_Fullscreen
+        )
+        dialog.addContentView(webView, paramsWebView)
+        dialog.show()
     }
 
     // A client to know about WebView navigations

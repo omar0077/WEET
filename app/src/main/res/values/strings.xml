@@ -8,4 +8,6 @@
     <string name="app_Title">weet</string>
     <string name="app_subTagLine">It\'s where women meet</string>
     <string name="linkedInBtn">Sign In with LinkedIn</string>
+
+    <string name="text_go_to"><a href="https://drive.google.com/file/d/1ofie0h1oXZGN3zOoq1ybd4i92IGj9rJf/view">privacy policy</a></string>
 </resources>
