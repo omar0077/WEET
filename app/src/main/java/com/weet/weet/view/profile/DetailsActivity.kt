@@ -1,15 +1,19 @@
 package com.weet.weet.view.profile
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.method.LinkMovementMethod
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.weet.weet.R
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_details.*
 
 class DetailsActivity : AppCompatActivity() {
@@ -17,11 +21,23 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var lastName: String
     private lateinit var email: String
 
+    lateinit var imageView: CircleImageView
+    lateinit var button: FloatingActionButton
+    private val pickImage = 100
+    private var imageUri: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_details)
+
+
+        imageView = findViewById(R.id.profile_image)
+        button = findViewById(R.id.floatingActionButton)
+        button.setOnClickListener {
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, pickImage)
+        }
 
         textView_link.setMovementMethod(LinkMovementMethod.getInstance())
 
@@ -45,6 +61,12 @@ class DetailsActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == pickImage) {
+            imageUri = data?.data
+            imageView.setImageURI(imageUri)
+        }
+    }
 
 }
