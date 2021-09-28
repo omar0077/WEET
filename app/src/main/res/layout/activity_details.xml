@@ -103,7 +103,6 @@
             android:backgroundTint="#F9F8F8"
             android:fontFamily="sans-serif-black"
             android:onClick="sendMessage"
-
             android:text="NEXT"
             android:textColor="#000">
 

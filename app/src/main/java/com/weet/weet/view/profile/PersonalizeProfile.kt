@@ -18,7 +18,7 @@ class PersonalizeProfile : AppCompatActivity() {
     }
 
     fun sendMessage(view: View) {
-        val intent = Intent(this, HomeActivity::class.java).apply {
+        val intent = Intent(this, OptionTagsActivity::class.java).apply {
             putExtra(AlarmClock.EXTRA_MESSAGE, "message")
         }
         startActivity(intent)

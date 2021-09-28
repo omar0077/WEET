@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".view.profile.OptionTagsActivity"
+            android:exported="true"/>
+        <activity
             android:name=".view.home.ConnectionDetailActivity"
             android:exported="true" />
         <activity
@@ -37,7 +40,6 @@
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
