@@ -11,7 +11,9 @@ import android.text.method.LinkMovementMethod
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
+import android.widget.ImageView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.squareup.picasso.Picasso
 import com.weet.weet.R
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_details.*
@@ -20,6 +22,7 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var firstName: String
     private lateinit var lastName: String
     private lateinit var email: String
+    private lateinit var profileUrl: String
 
     lateinit var imageView: CircleImageView
     lateinit var button: FloatingActionButton
@@ -41,15 +44,18 @@ class DetailsActivity : AppCompatActivity() {
 
         textView_link.setMovementMethod(LinkMovementMethod.getInstance())
 
+        profileUrl = intent.getStringExtra("linkedin_profile_pic_url")
         firstName = intent.getStringExtra("linkedin_first_name")
         lastName = intent.getStringExtra("linkedin_last_name")
         email = intent.getStringExtra("linkedin_email")
         val fName = findViewById<EditText>(R.id.first_name)
         val lName = findViewById<EditText>(R.id.last_name)
         val mail = findViewById<EditText>(R.id.email)
+        var profileImage = findViewById<ImageView>(R.id.profile_image)
         fName.text = firstName.toEditable()
         lName.text = lastName.toEditable()
         mail.text = email.toEditable()
+        Picasso.get().load(profileUrl).into(profileImage);
     }
 
     fun String.toEditable(): Editable =  Editable.Factory.getInstance().newEditable(this)
