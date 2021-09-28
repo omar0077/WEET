@@ -320,6 +320,7 @@
             android:backgroundTint="#F9F8F8"
             android:fontFamily="sans-serif-black"
             android:text="Submit"
+            android:onClick="sendMessage"
             app:layout_constraintBottom_toBottomOf="parent"
             android:textColor="#000"/>
 
